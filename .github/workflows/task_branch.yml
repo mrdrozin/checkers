@@ -1,0 +1,11 @@
+name: Creating task branch
+on: [push]
+jobs:
+  Create-task-branch-on-first-commit:
+    runs-on: ubuntu-latest
+    if: github.actor == 'github-classroom[bot]'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create the `task` branch on the first run
+        run: |
+          git checkout -b task && git push origin task
