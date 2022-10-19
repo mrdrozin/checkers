@@ -389,7 +389,7 @@ fun canEat(x: Int, y: Int): Boolean {
                                         flag = true;flag1 = true; Moves.add(Pair(x + j, y + j))
                                     }
 
-                                    else -> break
+                                    else -> {flag1 = true; break}
                                 }
                             }
                         }
@@ -414,7 +414,7 @@ fun canEat(x: Int, y: Int): Boolean {
                                         flag = true;flag2 = true; Moves.add(Pair(x + j, y - j))
                                     }
 
-                                    else -> break
+                                    else -> {flag2 = true; break}
                                 }
                             }
                         }
@@ -439,7 +439,7 @@ fun canEat(x: Int, y: Int): Boolean {
                                         flag = true;flag3 = true; Moves.add(Pair(x - j, y + j))
                                     }
 
-                                    else -> break
+                                    else -> {flag3 = true; break}
                                 }
                             }
                         }
@@ -467,7 +467,7 @@ fun canEat(x: Int, y: Int): Boolean {
                                         flag = true; flag4 = true; Moves.add(Pair(x - j, y - j))
                                     }
 
-                                    else -> break
+                                    else -> {flag4 =true; break}
                                 }
                             }
                         }
