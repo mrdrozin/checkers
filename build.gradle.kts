@@ -31,13 +31,18 @@ var targetArch = when (osArch) {
 val versionk = "0.7.34"
 val target = "${targetOs}-${targetArch}"
 
+val skijaArtifact = "skija-$targetOs"
+val skijaVersion = when (targetOs) {
+    "linux" -> "0.93.1"
+    else -> "0.93.6"
+}
 
 dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
     implementation(kotlin("stdlib"))
     testImplementation(kotlin("test"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-swing:1.6.4")
-    implementation("org.jetbrains.skija:skija-windows:0.93.6")
+    implementation("org.jetbrains.skija:${skijaArtifact}:${skijaVersion}")
     implementation("org.jetbrains.skiko:skiko-awt-runtime-$target:$versionk")
 }
 
